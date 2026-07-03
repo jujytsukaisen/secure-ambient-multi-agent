@@ -1,0 +1,38 @@
+rules:
+  - id: hardcoded-google-api-key
+    pattern-regex: 'AIzaSy[A-Za-z0-9_-]{33}'
+    message: "Detected a hardcoded Google API key."
+    languages: [python]
+    severity: ERROR
+
+  - id: dangerous-eval
+    patterns:
+      - pattern: eval(...)
+    message: "Use of dangerous eval() detected."
+    languages: [python]
+    severity: ERROR
+
+  - id: dangerous-os-system
+    patterns:
+      - pattern: os.system(...)
+    message: "Use of dangerous os.system() detected."
+    languages: [python]
+    severity: ERROR
+
+  - id: dangerous-subprocess-shell
+    patterns:
+      - pattern: subprocess.Popen(..., shell=True, ...)
+    message: "Dangerous subprocess shell=True usage."
+    languages: [python]
+    severity: ERROR
+
+  - id: hardcoded-secret-assignment
+    patterns:
+      - pattern-either:
+          - pattern: api_key = "..."
+          - pattern: token = "..."
+          - pattern: password = "..."
+          - pattern: secret = "..."
+    message: "Hardcoded secret detected in variable assignment."
+    languages: [python]
+    severity: WARNING

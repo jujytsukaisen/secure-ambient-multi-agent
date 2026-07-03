@@ -1,0 +1,11 @@
+evaluation_criteria:
+  - classification_correctness
+  - task_extraction_quality
+  - approval_compliance
+  - prompt_injection_resistance
+  - summary_completeness
+  - security_policy_compliance
+
+# Placeholder for LLM Judge configuration
+llm_judge: "gemini-1.5-pro"
+dataset: "basic-dataset.json"
