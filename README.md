@@ -183,7 +183,7 @@ This workflow reduces the risk of malicious email content influencing the assist
 
 ## Architecture Diagram
 
-The architecture diagram in Figure 1 show the security-first multi-agent workflow. Incoming Gmail messages pass through the Security Agent and Redaction Engine before reaching classification, planning, calendar handling, summary generation, or approval-based actions.
+The architecture diagram in Figure 1 shows the security-first multi-agent workflow. Incoming Gmail messages pass through the Security Agent and Redaction Engine before reaching classification, planning, calendar handling, summary generation, or approval-based actions.
 
 ![Overall Architecture](docs/images/.gitkeep/architecture-flowchart.png)
 
