@@ -183,40 +183,11 @@ This workflow reduces the risk of malicious email content influencing the assist
 
 ## Architecture Diagram
 
-User Dashboard ── OAuth/Auth ──► Email Reader Agent ◄── Fetch Emails ── Gmail API
-                                      │
-                                      ▼
-                         Security Agent: Prompt Injection Scan
-                              │                          │
-                    Malicious / Flagged                 Safe
-                              │                          │
-                              ▼                          ▼
-                    Halt & Alert User          Redaction Engine: Mask PII
-                                                         │
-                                                         ▼
-                                      Priority Classifier Agent
-                                           High / Med / Low
-                                                         │
-                                                         ▼
-                                      Action Recommendation Agent
-                                                         │
-                                                         ▼
-                                      Delegate to Specialized Agent
-                                ┌──────────────┬──────────────┬──────────────┐
-                                ▼              ▼              ▼
-                       Summarization     Calendar Booking   Other Task Agents
-                           Agent              Agent              │
-                                │              │                 │
-                                ▼              ▼                 ▼
-                      Update Dashboard   Human Approval Gate ◄────┘
-                                              │        │
-                                      Reject  │        │  Approve
-                                              ▼        ▼
-                                      Discard Action   Execute Action API
-                                                       e.g., Book Calendar
+The architecture diagram below shows the security-first multi-agent workflow. Incoming Gmail messages pass through the Security Agent and Redaction Engine before reaching classification, planning, calendar handling, summary generation, or approval-based actions.
 
+![Overall Architecture](docs/images/.gitkeep/architecture-flowchart.png)
 
----
+*Figure 1. Overall architecture of the Secure Ambient Multi-Agent Productivity Assistant.*
 
 ## Project Structure
 
